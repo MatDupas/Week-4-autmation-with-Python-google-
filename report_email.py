@@ -43,17 +43,17 @@ def generate_paragraph(path):
     with open(os.path.join(path,file),'r') as f:
       text = f.readlines()
       title, weight, desc = text[0],text[1],text[2]
-      paragraph += '\n'.join("name:"+title,"weight:"+weight,"\n")
+      paragraph += '\n'.join("name:"+title+"\n"+"weight:"+weight+"\n")
   return paragraph 
 
 
 if __name__ == "__main__":
-    paragraph = generate_paragraph('~/home/student-03-a899d807370d/supplier-data/descriptions')
+    paragraph = generate_paragraph('/home/student-03-a899d807370d/supplier-data/descriptions')
     today = datetime.datetime.now().strftime("%B %d,%Y")
     
     reports.generate_report('/tmp/processed.pdf', 'Processed Update on '+today, paragraph)
     
     body ="All fruits are uploaded to our website successfully. A detailed list is attached to this email."
     message= generate_email('automation@example', 'student-03-a899d807370d@35.223.118.227',
-                             'Upload Completed - Online Fruit Store', body, '/tmp/processed.pdf'):
+                             'Upload Completed - Online Fruit Store', body, '/tmp/processed.pdf')
     send(message)
