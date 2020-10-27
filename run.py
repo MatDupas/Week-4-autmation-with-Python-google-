@@ -3,7 +3,7 @@ import os
 import requests
 import json
 from tqdm import tqdm
-FILES_PATH = "/home/student-03-a899d807370d/supplier-data/descriptions"
+FILES_PATH = "/home/student-03-2b068cbe729c/supplier-data/descriptions"
 for file in tqdm(os.listdir(FILES_PATH)):
     with open(os.path.join(FILES_PATH,file),'r') as f:
         dic= {}
@@ -20,7 +20,7 @@ for file in tqdm(os.listdir(FILES_PATH)):
         # json = json_feedback) if response.status_code == 201:
         #     print("Feedback for {} was sent!".format(file)) else: print("A problem occured for {}. status code is {}: 
         #     ".format(file,response.status_code ))
-        response = requests.post("http://35.223.118.227/fruits/", data = dic)
+        response = requests.post("http://35.192.16.229/fruits/", data = dic)
         if response.status_code == 201:
             print("Feedback for {} was sent!".format(file))
         else:

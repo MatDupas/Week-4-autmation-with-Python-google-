@@ -4,7 +4,7 @@ import os
 from tqdm import tqdm
 
 
-IM_PATH = "/home/student-03-a899d807370d/supplier-data/images/"
+IM_PATH = "/home/student-03-2b068cbe729c/supplier-data/images/"
 for file in tqdm(os.listdir(IM_PATH)):
     outfile =IM_PATH + str(file)[:-5] + ".jpeg"
     try:
